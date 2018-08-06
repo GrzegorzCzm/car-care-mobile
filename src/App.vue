@@ -2,13 +2,11 @@
   <!-- App -->
   <div id="app">
 
-  <f7-panel right showMenu>
-    {{showMenu}}
+  <f7-panel right opened="showMenu">
     <f7-block>Right panel content</f7-block>
   </f7-panel>
     <NavigationBar 
       @clicked="onToggleMenu"/>
-    {{showMenu}}
     <f7-view id="main-view" url="/" main>
     </f7-view>
   </div>
@@ -21,7 +19,7 @@ export default {
   name: "App",
   data() {
     return {
-      showMenu: {"visible": true}
+      showMenu: true
     };
   },
   components: {
