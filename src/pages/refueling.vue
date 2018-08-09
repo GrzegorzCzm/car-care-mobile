@@ -1,8 +1,10 @@
+
+
 <template>
   <f7-page>
     <f7-block-title>{{ title }}</f7-block-title>
     <f7-block inner>
-      EXPENSES LISTS
+      Refueling LISTS
     </f7-block>
   </f7-page>
 </template>
@@ -10,10 +12,10 @@
 
 
 export default {
-  name: 'Expenses',
+  name: 'Refueling',
   data() {
     return {
-      title: 'Expenses'
+      title: 'Refueling'
     };
   }
 };

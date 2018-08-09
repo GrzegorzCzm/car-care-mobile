@@ -1,8 +1,8 @@
 <template>
     <f7-navbar sliding :title="title" > 
-      <div class="right">
-            <i class="f7-icons" v-on:click="toggleSideMenu">menu</i>
-        </div>
+      <div class="right panel-open" href="#" data-panel="right">
+            <i class="f7-icons">menu</i>
+        </div> 
     </f7-navbar>
 </template>
 
@@ -17,11 +17,6 @@ export default {
   },
   computed: mapGetters({
     title: 'getNavigationBarTitle'
-  }),
-  methods: {
-    toggleSideMenu() {
-      this.$emit('clicked');
-    }
-  }
+  })
 };
 </script>

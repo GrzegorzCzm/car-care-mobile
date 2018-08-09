@@ -1,4 +1,3 @@
-
 <template>
   <f7-page>
     <f7-block-title>{{ title }}</f7-block-title>
