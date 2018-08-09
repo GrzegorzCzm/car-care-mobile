@@ -1,34 +1,47 @@
 <template>
   <!-- App -->
   <div id="app">
-
-  <f7-panel right opened="showMenu">
-    <f7-block>Right panel content</f7-block>
-  </f7-panel>
+    <RightSidebarMenu :opened="showMenu"/>
+    <f7-view main>
+    <f7-page>
     <NavigationBar 
       @clicked="onToggleMenu"/>
     <f7-view id="main-view" url="/" main>
+    {{ showMenu ? "YES": "NO"}}
+
     </f7-view>
+    </f7-page>
+  </f7-view>
   </div>
 </template>
 
 <script>
-import NavigationBar from "./assets/NavigationBar.vue";
+import NavigationBar from "./assets/NavigationBar";
+import RightSidebarMenu from "./assets/RightSidebarMenu";
+import { mapActions } from 'vuex'
+
+import Store from './store/store'
+
 
 export default {
   name: "App",
   data() {
     return {
-      showMenu: true
+      showMenu: false
     };
   },
   components: {
-    NavigationBar
+    NavigationBar,
+    RightSidebarMenu
   },
   methods: {
+    ...mapActions([
+      'updateTitle',
+    ]),
     onToggleMenu() {
       console.log(this.showMenu);
-      this.showMenu = !this.showMenu;
+      this.showMenu = true;
+      this.updateTitle("SOME DUMMY TITLE");
       console.log(this.showMenu);
     }
   },
@@ -36,6 +49,7 @@ export default {
     isiOS() {
       return window.isiOS;
     }
-  }
+  },
 };
+
 </script>

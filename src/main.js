@@ -20,9 +20,12 @@ import Routes from './routes.js';
 
 // Import App Component
 import App from './app';
+import Vuex from 'vuex';
+
+import store from './store/store'
 
 // Init F7 Vue Plugin
-Vue.use(Framework7Vue, Framework7);
+Vue.use(Framework7Vue, Framework7, Vuex);
 
 // Init App
 const baseApp = new Vue({
@@ -36,6 +39,7 @@ const baseApp = new Vue({
     // App routes
     routes: Routes
   },
+  store,
   // Register App Component
   components: {
     app: App
