@@ -1,16 +1,22 @@
 <template>
     <f7-panel right>
         <f7-block>Right panel content</f7-block>
-        <ul class="right panel-close" 
+        <f7-list 
+          simple-list
+          class="right panel-close" 
           href="#" 
           data-panel="right"
           >
-          <li 
+          <div 
           v-for="page in pages" 
-          :key="page.id" 
+          :key="page.id"
           @click="updatePage(page)"
-          >{{page.title}}</li>
-        </ul>
+          >
+            <f7-list-item
+            :title="page.title" 
+            />
+          </div>
+        </f7-list>
   </f7-panel>
 </template>
 
