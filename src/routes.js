@@ -6,18 +6,22 @@ import NotFoundPage from './pages/not-found.vue';
 export default [
   {
     path: '/',
-    component: HomePage
+    component: HomePage,
+    title: "Home"
   },
   {
     path: '(/expenses)',
-    component: Expenses
+    component: Expenses,
+    title: "Expenses"
   },
   {
     path: '(/refueling)',
-    component: Refueling
+    component: Refueling,
+    title: "Refueling"
   },
   {
     path: '(.*)',
-    component: NotFoundPage
+    component: NotFoundPage,
+    title: "Upsss"
   }
 ];

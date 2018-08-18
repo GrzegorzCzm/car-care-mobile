@@ -2,13 +2,9 @@
   <!-- App -->
   <div id="app">
     <RightSidebarMenu/>
-    <f7-view main>
-      <f7-page>
         <NavigationBar/>
-        <f7-view id="main-view" :url="activePage" main :key="activePage">
+        <f7-view id="main-view" url="/" main>
         </f7-view>
-      </f7-page>
-  </f7-view>
   </div>
 </template>
 
@@ -36,9 +32,6 @@ export default {
   computed: {
     isiOS() {
       return window.isiOS;
-    },
-    activePage () {
-      return this.$store.state.general.activePage;
     }
   }
 };

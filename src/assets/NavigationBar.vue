@@ -13,10 +13,9 @@ import { mapGetters } from "vuex";
 export default {
   name: "NavigationBar",
   data() {
-    return {};
-  },
-  computed: mapGetters({
-    title: "getNavigationBarTitle"
-  })
+    return {
+          title: "CarCare"
+    };
+  }
 };
 </script>

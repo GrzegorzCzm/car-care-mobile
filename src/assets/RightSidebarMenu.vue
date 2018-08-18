@@ -1,21 +1,16 @@
 <template>
     <f7-panel right>
         <f7-block>Right panel content</f7-block>
-        <f7-list 
-          simple-list
-          class="right panel-close" 
-          href="#" 
-          data-panel="right"
-          >
-          <div 
+        <f7-list>
+          <f7-list-item
           v-for="page in pages" 
           :key="page.id"
-          @click="updatePage(page)"
-          >
-            <f7-list-item
-            :title="page.title" 
+          :link="page.path"
+          :title="page.title"
+          link-view="#main-view"
+          panel-close
+          reload-all
             />
-          </div>
         </f7-list>
   </f7-panel>
 </template>
@@ -34,14 +29,6 @@ export default {
         { id: 2, title: "Refueling", path: "/refueling" }
       ]
     };
-  },
-  methods: {
-    ...mapActions(["setActivePage", "updateTitle"]),
-
-    updatePage(page) {
-      this.updateTitle(page.title);
-      this.setActivePage(page.path);
-    }
   }
 };
 </script>
