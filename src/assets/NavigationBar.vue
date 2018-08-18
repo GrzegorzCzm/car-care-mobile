@@ -14,8 +14,10 @@ export default {
   name: "NavigationBar",
   data() {
     return {
-          title: "CarCare"
     };
-  }
+  },
+  computed: mapGetters({
+    title: 'getNavigationBarTitle'
+  })
 };
 </script>

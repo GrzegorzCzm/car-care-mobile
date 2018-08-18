@@ -11,7 +11,6 @@
 <script>
 import NavigationBar from "./assets/NavigationBar";
 import RightSidebarMenu from "./assets/RightSidebarMenu";
-import { mapActions} from "vuex";
 
 import Store from "./store/store";
 
@@ -25,9 +24,6 @@ export default {
   components: {
     NavigationBar,
     RightSidebarMenu
-  },
-  methods: {
-    ...mapActions(["updateTitle"])
   },
   computed: {
     isiOS() {

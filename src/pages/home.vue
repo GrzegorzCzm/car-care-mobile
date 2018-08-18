@@ -10,12 +10,24 @@
   </f7-page>
 </template>
 <script>
+import { mapActions } from "vuex";
+
+
 export default {
   name: 'CarCare',
   data() {
     return {
       title: 'CarCare Home Page'
     };
+  },
+  methods: {
+    ...mapActions(["updateTitle"]),
+    onPageInit(newPageTitle) {
+      this.updateTitle(newPageTitle);
+    }
+  },
+  on: {
+    pageInit: function(event, page){this.onPageInit(page.route.route.title)}
   }
 };
 </script>
