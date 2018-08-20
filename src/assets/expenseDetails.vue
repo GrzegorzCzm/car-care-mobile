@@ -11,24 +11,47 @@
   </f7-card-content>
   <f7-card-footer>
 
-    <f7-link>
-        <i class="f7-icons">gear</i>
+    <f7-button color="blue">
         Edit
-    </f7-link>
-    <f7-link>
-            <i class="f7-icons">trash</i>
+    </f7-button>
+      <!--f7-button color="red" v-on:click.prevent.stop="onDeleteExpense"-->
+      <f7-button color="red" raised  popover-open=".popover-delete-confirmation">
+
             Remove
-    </f7-link>
+    </f7-button>
   </f7-card-footer>
+  <f7-popover class="popover-delete-confirmation">
+    Are you sure to remove expense?
+        <f7-button color="blue" popover-close>
+          Cancel
+        </f7-button>
+        <f7-button color="red" 
+        v-on:click.prevent.stop="onDeleteExpense"
+        popover-close
+        >
+          Remove
+        </f7-button>
+
+
+  </f7-popover>
+
 </f7-card>
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   props: ["expense"],
   name: "ExpenseDetails",
   data() {
     return {};
+  },
+  methods: {
+    ...mapActions(["deleteExpense"]),
+    onDeleteExpense() {
+      this.deleteExpense(this.expense.id);
+    }
   }
 };
 </script>

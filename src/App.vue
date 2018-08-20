@@ -69,7 +69,7 @@ export default {
             app.loginScreen.close();
           },
           error => {
-            app.dialog.alert(`Uppsss... wrong credentials`);
+            app.dialog.alert('<p>Uppsss... wrong credentials</p>');
           }
         );
     }

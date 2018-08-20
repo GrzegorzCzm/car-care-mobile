@@ -4,7 +4,9 @@ import * as actions from './actions'
 import { 
 ADD_EXPENSE, ADD_EXPENSE_SUCCESS, ADD_EXPENSE_FAILED,
 GET_EXPENSE, GET_EXPENSE_SUCCESS, GET_EXPENSE_FAILED,
-GET_ALL_EXPENSES, GET_ALL_EXPENSES_SUCCESS, GET_ALL_EXPENSES_FAILED
+GET_ALL_EXPENSES, GET_ALL_EXPENSES_SUCCESS, GET_ALL_EXPENSES_FAILED,
+DELETE_EXPENSE, DELETE_EXPENSE_SUCCESS, DELETE_EXPENSE_FAILED
+
 } from "./mutation-types";
 
 // initial state
@@ -18,6 +20,9 @@ const initialState = {
 
 // mutations
 const mutations = {
+  [DELETE_EXPENSE] (state, expenseId) {
+    state.expenses = state.expenses.filter(expense => expense.id !== expenseId);
+  }
 };
 
 
